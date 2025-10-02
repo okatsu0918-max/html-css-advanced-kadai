@@ -1,0 +1,144 @@
+/* ==============================
+   共通スタイル（PC / SP 共通）
+============================== */
+body {
+  font-family: "Source Sans Pro", "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  font-size: 15px;
+  min-width: 375px;
+  margin: 0;
+}
+
+p {
+  font-size: 15px;
+}
+
+#main-visual > img {
+  width: 100%;
+}
+
+/* ==============================
+   SP（スマホ）用ナビ表示（最大767px）
+============================== */
+@media screen and (max-width: 767px) {
+
+  /* PCナビは非表示 */
+  #nav-pc {
+    display: none;
+  }
+
+  /* ハンバーガーアイコン */
+  #menu-sp {
+    float: right;
+    padding: 0;
+  }
+
+  /* スマホ用ナビ全体 */
+  #nav-sp {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none; /* クリックで開閉 */
+    z-index: 100;
+    background-color: #ce933e;
+  }
+
+  #nav-sp ul {
+    padding-left: 0;
+  }
+
+  #nav-sp li {
+    list-style: none;
+  }
+
+  /* 閉じる（×）ボタン */
+  #close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* ロゴ */
+  #logo-sp {
+    display: block;
+    margin: 80px 0 30px 20px;
+  }
+
+  /* リンク共通 */
+  #nav-sp a {
+    display: block;
+    margin: 0 20px;
+    height: 44px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #nav-sp a:link,
+  #nav-sp a:visited,
+  #nav-sp a:active {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #nav-sp a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  /* 矢印つきメニュー行 */
+  #nav-sp .menu {
+    background-image: url("images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+}
+
+/* ==============================
+   PC 用スタイル（768px以上）
+============================== */
+@media screen and (min-width: 768px) {
+
+  body {
+    max-width: 1080px;
+    min-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* ヘッダー配置 */
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* PCナビ */
+  #nav-pc {
+    text-align: right;
+    font-size: 14px;
+    padding-top: 15px;
+  }
+
+  #nav-pc a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #333; /* ← 通常は黒 */
+  }
+
+  #nav-pc a:link,
+  #nav-pc a:visited,
+  #nav-pc a:active {
+    color: #333;
+  }
+
+  #nav-pc a:hover {
+    color: #333;
+    text-decoration: underline;
+  }
+
+  /* PCではSP用UIを非表示 */
+  #menu-sp,
+  #nav-sp {
+    display: none;
+  }
+}
